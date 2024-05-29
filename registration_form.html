@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Festival Registration Form</title>
+   <style>
+    body{
+      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      justify-content:center;
+      align-items: center;
+      height: 100vh;
+      display: block;
+      background-color: black;
+    }
+    h1{
+      color:white;
+    }
+      form{
+         background-color:rgb(183, 25, 56);
+         border-radius: 10px;
+         box-shadow:dimgrey;
+         padding: 50px;
+         width: 400px;
+         margin-left:490px;
+         font-weight:bold;
+      }
+      label{
+         display: block;
+         font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+      input{
+         box-sizing: border-box;
+         border-radius: 2px;
+         width: 100%;
+         padding: 5px;
+      }
+      button{
+         padding: 5px;
+         border-radius: 5px;
+         border: 2px solid black;
+         font-size: medium;
+         font-weight: bold;
+      }
+   </style>
+</head>
+<body>
+  <h1><center>Festival Event Registration</center></h1>
+   <form id="registrationForm" onsubmit="return validateform()">
+      <label for="name">Name :</label>
+      <input type="text" name="name" id="name" required><br><br>
+      <label for="zipcode">Zip Code :</label>
+      <input type="text" id="zipcode" name="zipcode" pattern="\d{5}" required title="Enter exactly 5 digits"><br><br>
+      <label for="email">Email :</label>
+      <input type="email" id="email" name="email" required><br><br>
+      <label for="password">Password :</label>
+      <input type="password" id="password" name="password" required><br><br>
+      <label for="mobile no">Mobile Number :</label>
+      <input type="tel" id="mobile no" name="mobile number" pattern="\d{10}" required title="Enter exactly 10 digits"><br><br>
+      <center><button type="submit">Register</button></center>
+   </form>
+   <script>
+      function validateform(){
+         var name=document.getElementById('name').value;
+         var zipCode=document.getElementById('zipcode').value;
+         var email=document.getElementById('email').value;
+         var password=document.getElementById('password').value;
+         var mobile=document.getElementById('mobile no').value;
+         var email_Reg=/^[a-zA-Z0-9._-]+@vitstudent\.ac\.in$/;
+         var password_Reg=/^(?=(?:[^A-Z]*[A-Z]){1,})(?=(?:[^a-z]*[a-z]){1,})(?=(?:\D*\d){1,})(?=(?:[^\W_]*[\W_]){1,}).{10,100}$/;
+         var error_message="";
+      if (!name || !email || !zipCode || !password || !mobile){
+        error_message+="All fields are mandatory\n";
+      }
+      if (!zipCode.match(/^\d{5}$/)){
+        error_message+="Zip code should be exactly five digits\n";
+      }
+      if (!email.match(email_Reg)){
+        error_message+="Email validation allows only VIT mails\n";
+      }
+      if (!password.match(password_Reg)){
+        error_message+="Password conditions not met\n";
+      }
+      if (!mobile.match(/^\d{10}$/)){
+        error_message+="Mobile number should be 10 digits only\n";
+      }
+      if (error_message!==""){
+        alert(error_message);
+        return false;
+      }
+      if (error_message===""){
+         alert("Registered successfully!");
+         return true;
+      }
+    }
+   </script>
+</body>
+</html>
