@@ -1,0 +1,37 @@
+body{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    justify-content:center;
+    align-items: center;
+    height: 100vh;
+    display: block;
+    background-color: black;
+  }
+  h1{
+    color:white;
+  }
+    form{
+       background-color:rgb(183, 25, 56);
+       border-radius: 10px;
+       box-shadow:dimgrey;
+       padding: 50px;
+       width: 400px;
+       margin-left:490px;
+       font-weight:bold;
+    }
+    label{
+       display: block;
+       font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    input{
+       box-sizing: border-box;
+       border-radius: 2px;
+       width: 100%;
+       padding: 5px;
+    }
+    button{
+       padding: 5px;
+       border-radius: 5px;
+       border: 2px solid black;
+       font-size: medium;
+       font-weight: bold;
+    }
