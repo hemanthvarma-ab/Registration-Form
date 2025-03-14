@@ -24,13 +24,16 @@ function validateform(){
     if (!password.match(password_Reg)){
         error_message+="Password conditions not met\n";
     }
+    
     if (!mobile.match(/^\d{10}$/)){
         error_message+="Mobile number should be 10 digits only\n";
     }
+    
     if (error_message!==""){
         alert(error_message);
         return false;
     }
+    
     if (error_message===""){
         alert("Registered successfully!");
         return true;
